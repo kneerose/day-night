@@ -6,7 +6,7 @@
 int ch;
 float a=0.0,b=0.0,c=0.0,d=0.6,e=0.8,f=0.196078;;
 int stateb =1,statep =1,states=1;
-float x_positionb = 0,x_positionp=0,x_positions1=0;
+float x_positionb = 0,x_positionp=0,x_positions1=0,x_positionts=0,x_positiontb=0;
 using namespace std;
 void home()
 {
@@ -345,94 +345,49 @@ void sky()
     glVertex2f(1100,380);
     glEnd();
 }
-void trees()
+void trees(float x_positionts)
 {
     //tree
     glColor3f(0.9,0.2,0.0);
     glBegin(GL_POLYGON);
-    glVertex2f(280,185);
-    glVertex2f(280,255);
-    glVertex2f(295,255);
-    glVertex2f(295,185);
+    glVertex2f(280+x_positionts,185);
+    glVertex2f(280+x_positionts,255);
+    glVertex2f(295+x_positionts,255);
+    glVertex2f(295+x_positionts,185);
     glEnd();
     glColor3f(0.0,0.5,0.0);
     glBegin(GL_TRIANGLES);
-    glVertex2f(240,255);
-    glVertex2f(335,255);
-    glVertex2f(287.5,315);
+    glVertex2f(240+x_positionts,255);
+    glVertex2f(335+x_positionts,255);
+    glVertex2f(287.5+x_positionts,315);
     glEnd();
     glBegin(GL_TRIANGLES);
-    glVertex2f(250,285);
-    glVertex2f(325,285);
-    glVertex2f(287.5,345);
+    glVertex2f(250+x_positionts,285);
+    glVertex2f(325+x_positionts,285);
+    glVertex2f(287.5+x_positionts,345);
     glEnd();
 
 }
-void treeb()
+void treeb( float x_positiontb)
 {
     //tree 1
     glColor3f(0.9,0.2,0.0);
     glBegin(GL_POLYGON);
-    glVertex2f(100,135);
-    glVertex2f(100,285);
-    glVertex2f(140,285);
-    glVertex2f(140,135);
+    glVertex2f(100+x_positiontb,135);
+    glVertex2f(100+x_positiontb,285);
+    glVertex2f(140+x_positiontb,285);
+    glVertex2f(140+x_positiontb,135);
     glEnd();
     glColor3f(0.0,0.5,0.0);
     glBegin(GL_TRIANGLES);
-    glVertex2f(23,285);
-    glVertex2f(217,285);
-    glVertex2f(120,380);
+    glVertex2f(23+x_positiontb,285);
+    glVertex2f(217+x_positiontb,285);
+    glVertex2f(120+x_positiontb,380);
     glEnd();
     glBegin(GL_TRIANGLES);
-    glVertex2f(43,335);
-    glVertex2f(197,335);
-    glVertex2f(120.5,420);
-    glEnd();
-}
-void trees1()
-{
-    //tree
-    glColor3f(0.9,0.2,0.0);
-    glBegin(GL_POLYGON);
-    glVertex2f(840,185);
-    glVertex2f(840,255);
-    glVertex2f(855,255);
-    glVertex2f(855,185);
-    glEnd();
-    glColor3f(0.0,0.5,0.0);
-    glBegin(GL_TRIANGLES);
-    glVertex2f(800,255);
-    glVertex2f(895,255);
-    glVertex2f(847.5,315);
-    glEnd();
-    glBegin(GL_TRIANGLES);
-    glVertex2f(810,285);
-    glVertex2f(885,285);
-    glVertex2f(847.5,345);
-    glEnd();
-
-}
-void treeb1()
-{
-    //tree 1
-    glColor3f(0.9,0.2,0.0);
-    glBegin(GL_POLYGON);
-    glVertex2f(980,135);
-    glVertex2f(980,285);
-    glVertex2f(1020,285);
-    glVertex2f(1020,135);
-    glEnd();
-    glColor3f(0.0,0.5,0.0);
-    glBegin(GL_TRIANGLES);
-    glVertex2f(903,285);
-    glVertex2f(1097,285);
-    glVertex2f(1000,380);
-    glEnd();
-    glBegin(GL_TRIANGLES);
-    glVertex2f(923,335);
-    glVertex2f(1077,335);
-    glVertex2f(1000.5,420);
+    glVertex2f(43+x_positiontb,335);
+    glVertex2f(197+x_positiontb,335);
+    glVertex2f(120.5+x_positiontb,420);
     glEnd();
 }
 void day()
@@ -444,10 +399,10 @@ void day()
     ground();
     birds();
     plane();
-    trees();
-    treeb();
-    trees1();
-    treeb1();
+    trees(0);
+    treeb(0);
+    trees(560);
+    treeb(880);
     //left
     grass(0,0);
     grass(10,140);
@@ -489,10 +444,10 @@ void night()
     stars();
     wall();
     ground();
-    trees();
-    treeb();
-    trees1();
-    treeb1();
+    trees(0);
+    treeb(0);
+    trees(560);
+    treeb(880);
      //left
     grass(0,0);
     grass(10,140);

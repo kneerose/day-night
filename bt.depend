@@ -229,3 +229,9 @@
 	<stddef.h>
 	<GL/gl.h>
 
+1604123788 source:c:\users\duwal\documents\daynight\main.cpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<GL/gl.h>
+	<iostream>
+

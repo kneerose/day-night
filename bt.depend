@@ -235,3 +235,13 @@
 	<GL/gl.h>
 	<iostream>
 
+1604499545 source:h:\daynight\main.cpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<GL/gl.h>
+	<iostream>
+	<math.h>
+
+1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
+	<_mingw.h>
+
